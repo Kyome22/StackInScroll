@@ -12,19 +12,12 @@ typealias File = (image: NSImage, label: String)
 class ViewController: NSViewController {
 
     @IBOutlet weak var scrollView: NSScrollView!
-    @IBOutlet weak var stackView: NSStackView!
+    @IBOutlet weak var stackView: SortableStackView!
     
     var files = [File]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.yellow.cgColor
-
-        stackView.wantsLayer = true
-        stackView.layer?.backgroundColor = NSColor.green.cgColor
-        
         for i in (0 ..< 4) {
             let image = NSImage(imageLiteralResourceName: "Image-\(i + 1)")
             let label = UUID().uuidString + ".png"
@@ -37,11 +30,14 @@ class ViewController: NSViewController {
         stackView.views.forEach { view in
             view.removeFromSuperview()
         }
-        files.forEach { (image, label) in
+        files.enumerated().forEach { (offset, element) in
             guard let thumbnailView = makeThumbnailView() else { return }
-            thumbnailView.imageView.image = image
-            thumbnailView.aspect = image.aspect
-            thumbnailView.label.stringValue = label
+            thumbnailView.imageView.image = element.image
+            thumbnailView.aspect = element.image.aspect
+            thumbnailView.label.stringValue = element.label
+            if offset == 0 {
+                thumbnailView.selected = true
+            }
             stackView.addView(thumbnailView, in: .bottom)
             thumbnailView.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
         }

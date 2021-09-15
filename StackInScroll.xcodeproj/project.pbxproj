@@ -14,6 +14,7 @@
 		1C2F786526F1C03400B495C8 /* ThumbnailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2F786426F1C03400B495C8 /* ThumbnailView.xib */; };
 		1C2F786726F1C04C00B495C8 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F786626F1C04C00B495C8 /* ThumbnailView.swift */; };
 		1C2F786926F1C4D300B495C8 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F786826F1C4D300B495C8 /* ThumbnailImageView.swift */; };
+		1C2F786B26F267D700B495C8 /* SortableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F786A26F267D700B495C8 /* SortableStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1C2F786426F1C03400B495C8 /* ThumbnailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailView.xib; sourceTree = "<group>"; };
 		1C2F786626F1C04C00B495C8 /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 		1C2F786826F1C4D300B495C8 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
+		1C2F786A26F267D700B495C8 /* SortableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				1C2F785426F1BDDF00B495C8 /* AppDelegate.swift */,
-				1C2F785626F1BDDF00B495C8 /* ViewController.swift */,
 				1C2F785A26F1BDE000B495C8 /* Main.storyboard */,
+				1C2F785626F1BDDF00B495C8 /* ViewController.swift */,
+				1C2F786A26F267D700B495C8 /* SortableStackView.swift */,
 				1C2F786426F1C03400B495C8 /* ThumbnailView.xib */,
 				1C2F786626F1C04C00B495C8 /* ThumbnailView.swift */,
 				1C2F786826F1C4D300B495C8 /* ThumbnailImageView.swift */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2F786726F1C04C00B495C8 /* ThumbnailView.swift in Sources */,
+				1C2F786B26F267D700B495C8 /* SortableStackView.swift in Sources */,
 				1C2F786926F1C4D300B495C8 /* ThumbnailImageView.swift in Sources */,
 				1C2F785726F1BDDF00B495C8 /* ViewController.swift in Sources */,
 				1C2F785526F1BDDF00B495C8 /* AppDelegate.swift in Sources */,

@@ -9,21 +9,31 @@ import Cocoa
 
 class ThumbnailView: NSView {
 
+    @IBOutlet weak var selectedAreaView: NSView!
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var label: NSTextField!
     
+    var selected: Bool = false {
+        didSet {
+            let color = selected ? NSColor.systemGray.withAlphaComponent(0.3).cgColor : nil
+            selectedAreaView.layer?.backgroundColor = color
+            label.drawsBackground = selected
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        selectedAreaView.wantsLayer = true
+        selectedAreaView.layer?.cornerRadius = 4
+        
         imageView.imageScaling = .scaleProportionallyUpOrDown
         imageView.imageAlignment = .alignCenter
-        imageView.wantsLayer = true
-        imageView.layer?.backgroundColor = NSColor.blue.cgColor
         
-        label.drawsBackground = true
-        label.backgroundColor = NSColor.magenta
-        
-        self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor.lightGray.cgColor
+        label.drawsBackground = false
+        label.backgroundColor = NSColor.controlAccentColor.usingColorSpace(.deviceRGB)
+        label.wantsLayer = true
+        label.layer?.cornerRadius = 4
     }
     
     private var aspectLayoutConstraint: NSLayoutConstraint? {

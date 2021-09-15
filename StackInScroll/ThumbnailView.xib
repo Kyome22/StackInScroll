@@ -12,10 +12,21 @@
             <rect key="frame" x="0.0" y="0.0" width="327" height="358"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="450" verticalCompressionResistancePriority="450" translatesAutoresizingMaskIntoConstraints="NO" id="uye-FJ-ICg" customClass="ThumbnailImageView" customModule="StackInScroll" customModuleProvider="target">
-                    <rect key="frame" x="4" y="28" width="319" height="326"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Image-2" id="0DV-t5-2oI"/>
-                </imageView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="03F-Fr-yJ3">
+                    <rect key="frame" x="6" y="22" width="315" height="334"/>
+                    <subviews>
+                        <imageView horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="450" verticalCompressionResistancePriority="450" translatesAutoresizingMaskIntoConstraints="NO" id="uye-FJ-ICg" customClass="ThumbnailImageView" customModule="StackInScroll" customModuleProvider="target">
+                            <rect key="frame" x="10" y="10" width="295" height="314"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Image-2" id="0DV-t5-2oI"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uye-FJ-ICg" firstAttribute="leading" secondItem="03F-Fr-yJ3" secondAttribute="leading" constant="10" id="b2E-yr-xaZ"/>
+                        <constraint firstAttribute="bottom" secondItem="uye-FJ-ICg" secondAttribute="bottom" constant="10" id="leu-pE-nXo"/>
+                        <constraint firstAttribute="trailing" secondItem="uye-FJ-ICg" secondAttribute="trailing" constant="10" id="pFH-Qe-G4k"/>
+                        <constraint firstItem="uye-FJ-ICg" firstAttribute="top" secondItem="03F-Fr-yJ3" secondAttribute="top" constant="10" id="tXL-uv-bpM"/>
+                    </constraints>
+                </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="450" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-si-pIm">
                     <rect key="frame" x="143" y="4" width="41" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingMiddle" alignment="center" title="Label" id="4fv-Mx-K1D">
@@ -26,22 +37,23 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="uye-FJ-ICg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="4" id="6B0-n7-qpi"/>
+                <constraint firstItem="03F-Fr-yJ3" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="6" id="7Zj-Gl-5vh"/>
                 <constraint firstAttribute="bottom" secondItem="fIj-si-pIm" secondAttribute="bottom" constant="4" id="7hg-vK-TfJ"/>
+                <constraint firstItem="03F-Fr-yJ3" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="2" id="8DS-He-klr"/>
                 <constraint firstItem="fIj-si-pIm" firstAttribute="width" relation="lessThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="width" id="Gcr-g9-aaQ"/>
                 <constraint firstItem="fIj-si-pIm" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Hvr-ur-vhQ"/>
-                <constraint firstAttribute="trailing" secondItem="uye-FJ-ICg" secondAttribute="trailing" constant="4" id="aRD-54-akU"/>
-                <constraint firstItem="uye-FJ-ICg" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="4" id="gXt-23-AvR"/>
-                <constraint firstItem="fIj-si-pIm" firstAttribute="top" secondItem="uye-FJ-ICg" secondAttribute="bottom" constant="8" id="iGl-yn-n2U"/>
+                <constraint firstAttribute="trailing" secondItem="03F-Fr-yJ3" secondAttribute="trailing" constant="6" id="RkW-fV-Btj"/>
+                <constraint firstItem="fIj-si-pIm" firstAttribute="top" secondItem="03F-Fr-yJ3" secondAttribute="bottom" constant="2" id="VB4-8p-WtN"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="uye-FJ-ICg" id="8YG-lC-DCM"/>
                 <outlet property="label" destination="fIj-si-pIm" id="Zhn-px-GWp"/>
+                <outlet property="selectedAreaView" destination="03F-Fr-yJ3" id="WPX-vn-6jH"/>
             </connections>
             <point key="canvasLocation" x="-394.5" y="197"/>
         </customView>
     </objects>
     <resources>
-        <image name="Image-2" width="1200" height="1121"/>
+        <image name="Image-2" width="920" height="590"/>
     </resources>
 </document>
